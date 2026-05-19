@@ -1,0 +1,62 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: IgH EtherCAT Master
+Upstream-Contact: Florian Pose <fp@igh.de>
+Source: https://gitlab.com/etherlab.org/ethercat
+
+Files: *
+Copyright: 2006-2026 Florian Pose, Ingenieurgemeinschaft IgH
+License: GPL-2.0
+
+Files: lib/*
+Copyright: 2006-2026 Florian Pose, Ingenieurgemeinschaft IgH
+License: LGPL-2.1
+
+Files: include/*
+Copyright: 2006-2026 Florian Pose, Ingenieurgemeinschaft IgH
+License: LGPL-2.1
+
+Files: devices/e1000/* devices/igb/* devices/igc/*
+Copyright: 2006-2026 Florian Pose, Ingenieurgemeinschaft IgH
+           2007-2016 STMicroelectronics Ltd
+           2014-2015 Beckhoff Automation GmbH
+           2023 Intel Corporation
+           2024 Linutronix GmbH
+License: GPL-2.0
+
+Files: master/rtdm.c master/rtdm_xenomai_v3.c master/rtdm_details.h
+Copyright: 2006-2026 Florian Pose, Ingenieurgemeinschaft IgH
+           2011 IgH Andreas Stewering-Bone
+           2024 Bjarne von Horn, Ingenieurgemeinschaft IgH
+License: GPL-2.0
+
+Files: debian/*
+Copyright: 2024 Flora <2321901849@qq.com>
+License: GPL-2.0
+
+License: GPL-2.0
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+ .
+ On Debian systems, the full text of the GNU General Public License
+ version 2 can be found in `/usr/share/common-licenses/GPL-2'.
+
+License: LGPL-2.1
+ This library is free software; you can redistribute it and/or modify
+ it under the terms of the GNU Lesser General Public License as published by
+ the Free Software Foundation; either version 2.1 of the License, or
+ (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU Lesser General Public License for more details.
+ .
+ On Debian systems, the full text of the GNU Lesser General Public License
+ version 2.1 can be found in `/usr/share/common-licenses/LGPL-2.1'.
