@@ -40,6 +40,8 @@ override_dh_auto_install:
 
 override_dh_install:
 	dh_install
+	mkdir -p debian/ethercat-igh/usr/src/ethercat-1.7.1
+	cp -a debian/dkms-src/. debian/ethercat-igh/usr/src/ethercat-1.7.1/
 	
 	if [ -f "debian/ethercat-igh$(PREFIX)/etc/ethercat.conf" ]; then \
 		mkdir -p debian/ethercat-igh/etc; \
