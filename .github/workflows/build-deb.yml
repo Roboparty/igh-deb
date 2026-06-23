@@ -5,7 +5,14 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        include:
+          - arch: amd64
+            os: ubuntu-22.04
+          - arch: arm64
+            os: [self-hosted, rk3588]
+    runs-on: ${{ matrix.os }}
     outputs:
       version: ${{ steps.version.outputs.PKG_VERSION }}
     steps:
@@ -45,7 +52,7 @@ jobs:
 
       - name: Build deb package
         run: |
-          dpkg-buildpackage -us -uc -b
+          dpkg-buildpackage -us -uc -b -a${{ matrix.arch }}
           mv ../ethercat-igh_*.deb ../ethercat-dkms_*.deb . 2>/dev/null || true
           mv ../ethercat-igh_*.deb . 2>/dev/null || true
 
@@ -58,7 +65,7 @@ jobs:
       - name: Upload deb artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ethercat-igh-v${{ steps.version.outputs.PKG_VERSION }}-${{ runner.arch }}
+          name: ethercat-igh-v${{ steps.version.outputs.PKG_VERSION }}-${{ matrix.arch }}
           path: "*.deb"
 
       - name: Upload to GitHub Release
