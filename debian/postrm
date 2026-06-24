@@ -5,11 +5,7 @@ if [ "${HOST_BUILD_STAGE:-0}" -eq 1 ]; then
     exit 0
 fi
 
-if [ "$1" = "remove" ]; then
-    dkms remove -m ethercat -v 1.7.1 --all >/dev/null 2>&1 || true
-fi
-
-if [ "$1" = "purge" ] || [ "$1" = "remove" ]; then
+if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
     PROFILE_FILE="/etc/profile.d/ethercat.sh"
     if [ -f "$PROFILE_FILE" ]; then
         rm -f "$PROFILE_FILE"
