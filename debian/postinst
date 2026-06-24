@@ -19,7 +19,9 @@ if [ "$1" = "configure" ]; then
         echo "  Or search:      apt search linux-headers | grep $(uname -r)" >&2
         exit 1
     fi
-    dkms add -m $NAME -v $VERSION
+    if ! dkms status -m $NAME -v $VERSION 2>/dev/null | grep -q "$NAME"; then
+        dkms add -m $NAME -v $VERSION
+    fi
     dkms build -m $NAME -v $VERSION
     dkms install -m $NAME -v $VERSION
 fi
