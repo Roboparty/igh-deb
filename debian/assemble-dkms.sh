@@ -90,7 +90,7 @@ convert_kbuild() {
         -e 's|@ENABLE_E1000E@||g' \
         -e 's|@ENABLE_IGC@|1|g' \
         -e 's|@ENABLE_R8169@|1|g' \
-        -e 's|@ENABLE_GENET@|1|g' \
+        -e 's|@ENABLE_GENET@||g' \
         -e 's|@ENABLE_STMMAC@|1|g' \
         -e 's|@ENABLE_CCAT@|1|g' \
         -e 's|@KERNEL_[A-Z0-9_]*@|\$(KERNEL_MATCH_DRIVER)|g' \
