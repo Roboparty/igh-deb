@@ -3,7 +3,7 @@
 #define __EC_CONFIG_H__
 
 #define EC_USE_HRTIMER       1
-#define EC_HAVE_CYCLES        1
+/* #undef EC_HAVE_CYCLES */
 #define EC_IDENT_WILDCARDS    1
 #define EC_REGALIAS           1
 #define EC_MAX_NUM_DEVICES    1
